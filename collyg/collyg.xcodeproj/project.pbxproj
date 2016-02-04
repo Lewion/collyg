@@ -38,7 +38,7 @@
 		2D2B064E1C6371E50030F324 /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Service.m; path = Services/Service.m; sourceTree = "<group>"; };
 		2D2B06501C637EF90030F324 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		2D2B06511C637EF90030F324 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		2D3CC2591C6361A10080AAA6 /* collyg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = collyg.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D3CC2591C6361A10080AAA6 /* Collyg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collyg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3CC25D1C6361A10080AAA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2D3CC25F1C6361A10080AAA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2D3CC2601C6361A10080AAA6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		2D3CC25A1C6361A10080AAA6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2D3CC2591C6361A10080AAA6 /* collyg.app */,
+				2D3CC2591C6361A10080AAA6 /* Collyg.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,7 +204,7 @@
 			);
 			name = collyg;
 			productName = collyg;
-			productReference = 2D3CC2591C6361A10080AAA6 /* collyg.app */;
+			productReference = 2D3CC2591C6361A10080AAA6 /* Collyg.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -218,6 +218,15 @@
 				TargetAttributes = {
 					2D3CC2581C6361A10080AAA6 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = GY2S6KL8RZ;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -381,6 +390,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Collyg;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -418,6 +428,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Collyg;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -433,7 +444,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = be.mediahuis.collyg;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1087fe37-5395-4a1d-bfa8-621bc90ddae1";
 			};
 			name = Debug;
 		};
@@ -446,7 +457,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = be.mediahuis.collyg;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1087fe37-5395-4a1d-bfa8-621bc90ddae1";
 			};
 			name = Release;
 		};

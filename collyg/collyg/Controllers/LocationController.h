@@ -16,6 +16,7 @@
 
 @interface LocationController : NSObject <CLLocationManagerDelegate>
 + (id)sharedManager;
+- (void)updateKnownLocations;
 - (void)startLocationUpdates;
 @property (nonatomic, strong) NSArray *locations;
 @property (nonatomic, weak) id <LocationControllerDelegate> delegate;

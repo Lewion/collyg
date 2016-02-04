@@ -35,7 +35,7 @@
     
     self.displayName.text = self.user.displayName;
     self.locationLabel.text = (self.user.location != nil) ? self.user.location.location : @"Location not known";
-    [self.cellphoneButton setTitle:self.user.mobilephone forState:UIControlStateNormal];
+    self.cellphoneButton.layer.cornerRadius = 4.f;
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://collyg.be/profiles/%@", self.user.profilePicture]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
 

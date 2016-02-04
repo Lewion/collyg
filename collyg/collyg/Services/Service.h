@@ -10,7 +10,7 @@
 #import "User.h"
 
 typedef void (^loginCompletionBlock)(User*);
-typedef void (^usersCompletionBlock)(NSArray*);
+typedef void (^usersCompletionBlock)(NSArray *availableUsers, NSArray *unavailableUsers);
 typedef void (^locationsCompletionBlock)(NSArray*);
 typedef void (^errorBlock)(NSError*);
 
@@ -19,4 +19,6 @@ typedef void (^errorBlock)(NSError*);
 + (id)sharedManager;
 - (void) loginWithUserName:(NSString *)userName password:(NSString *)password success:(loginCompletionBlock)successBlock failure:(errorBlock)failureBlock;
 - (void) fetchAllUsersWithSuccess:(usersCompletionBlock)successBlock failure:(errorBlock)failureBlock;
+- (void) fetchAllLocationsWithSuccess:(locationsCompletionBlock)successBlock failure:(errorBlock)failureBlock;
+- (void) updateUser:(User *)user;
 @end

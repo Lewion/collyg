@@ -59,7 +59,22 @@
             failureBlock(error);
             return;
         }
-        successBlock(objects);
+        
+        NSMutableArray *availableUsers = [NSMutableArray new];
+        NSMutableArray *unavailableUsers = [NSMutableArray new];
+        
+        for (User *user in objects) {
+            if (user.location) {
+                [availableUsers addObject:user];
+            } else {
+                [unavailableUsers addObject:user];
+            }
+        }
+        
+        [availableUsers sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"firstName" ascending:YES]]];
+        [unavailableUsers sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"firstName" ascending:YES]]];
+        
+        successBlock(availableUsers, unavailableUsers);
     }];
 }
 
@@ -71,6 +86,16 @@
             return;
         }
         successBlock(objects);
+    }];
+}
+
+- (void) updateUser:(User *)user {
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            // The currentUser saved successfully.
+        } else {
+            // There was an error saving the currentUser.
+        }
     }];
 }
 
