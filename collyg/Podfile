@@ -1,3 +1,4 @@
 target 'collyg' do
 	pod 'Parse'
+	pod 'AFNetworking'
 end

@@ -11,6 +11,7 @@
 #import "ColleagueTableViewCell.h"
 #import "Service.h"
 #import "ColleagueDetailViewController.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface ColleaguesViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -77,7 +78,13 @@
     cell.displayName.text = displayName;
     NSString *location = user.location.location;
     cell.location.text = location;
-    cell.colleagueProfileImageView.image = [UIImage imageNamed:@"default_profile_image"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://collyg.be/profiles/small_%@", user.profilePicture]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [cell.colleagueProfileImageView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        cell.colleagueProfileImageView.image = image;
+    } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+        cell.colleagueProfileImageView.image = [UIImage imageNamed:@"default_profile_image"];
+    }];
     return cell;
 }
 

@@ -11,7 +11,7 @@
 #import "Team.h"
 
 @interface User : PFUser<PFSubclassing>
-@property (nonatomic, strong) NSString *telephone;
+@property (nonatomic, strong) NSString *mobilephone;
 @property (nonatomic, strong) Location *location;
 @property (nonatomic, strong) Team *team;
 @property (nonatomic, strong) NSString *profilePicture;

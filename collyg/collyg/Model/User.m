@@ -9,7 +9,7 @@
 #import "User.h"
 
 @implementation User
-@dynamic telephone;
+@dynamic mobilephone;
 @dynamic location;
 @dynamic team;
 @dynamic profilePicture;
