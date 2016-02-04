@@ -9,6 +9,11 @@
 #import "ColleagueDetailViewController.h"
 
 @interface ColleagueDetailViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *displayName;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UIButton *cellphoneButton;
+@property (weak, nonatomic) IBOutlet UILabel *teamLabel;
 
 @end
 
@@ -24,14 +29,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.displayName.text = self.user.displayName;
+    self.locationLabel.text = (self.user.location != nil) ? self.user.location.location : @"Location not known";
+    [self.cellphoneButton setTitle:self.user.telephone forState:UIControlStateNormal];
 }
-*/
+
+- (IBAction)cellphoneButtonTapped:(id)sender {
+    NSURL *cellUrl = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",[self.user objectForKey:@"telephone"]]];
+    
+    if ([[UIApplication sharedApplication]canOpenURL:cellUrl]) {
+        [[UIApplication sharedApplication] openURL:cellUrl];
+    }
+}
 
 @end

@@ -8,13 +8,6 @@
 
 #import "ColleagueTableViewCell.h"
 
-@interface ColleagueTableViewCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *displayName;
-@property (weak, nonatomic) IBOutlet UILabel *location;
-
-@end
-
 @implementation ColleagueTableViewCell
 
 - (void)awakeFromNib {

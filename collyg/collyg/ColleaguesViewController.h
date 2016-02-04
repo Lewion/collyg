@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface ColleaguesViewController : UIViewController
+@interface ColleaguesViewController : BaseViewController
 
 @end

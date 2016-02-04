@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ColleagueTableViewCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UIImageView *colleagueProfileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *displayName;
+@property (weak, nonatomic) IBOutlet UILabel *location;
 @end

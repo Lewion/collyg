@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "User.h"
 
 @interface ColleagueDetailViewController : UIViewController
-
+@property (nonatomic, strong) User* user;
 @end
