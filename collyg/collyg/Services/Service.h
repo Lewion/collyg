@@ -11,6 +11,7 @@
 
 typedef void (^loginCompletionBlock)(User*);
 typedef void (^usersCompletionBlock)(NSArray*);
+typedef void (^locationsCompletionBlock)(NSArray*);
 typedef void (^errorBlock)(NSError*);
 
 

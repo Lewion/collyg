@@ -12,4 +12,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *colleagueProfileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *displayName;
 @property (weak, nonatomic) IBOutlet UILabel *location;
+@property (weak, nonatomic) IBOutlet UILabel *teamLabel;
 @end

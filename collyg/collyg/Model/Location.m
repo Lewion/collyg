@@ -22,4 +22,9 @@
     return @"Location";
 }
 
+- (CLLocation *)parseLocationToUsableLocation {
+    return  [[CLLocation alloc] initWithLatitude:[self.latitude doubleValue]
+                                       longitude:[self.longitude doubleValue]];
+}
+
 @end

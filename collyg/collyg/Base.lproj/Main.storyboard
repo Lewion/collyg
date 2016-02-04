@@ -115,6 +115,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJ8-ei-i5o">
+                                                    <rect key="frame" x="96" y="65.5" width="65.5" height="20.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8b-4O-o37">
                                                     <rect key="frame" x="96" y="37" width="65.5" height="20.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -125,12 +132,14 @@
                                             <animations/>
                                             <constraints>
                                                 <constraint firstItem="RDB-tU-o38" firstAttribute="top" secondItem="mKy-cF-yDN" secondAttribute="topMargin" id="9Bv-kl-RhU"/>
+                                                <constraint firstItem="jJ8-ei-i5o" firstAttribute="top" secondItem="S8b-4O-o37" secondAttribute="bottom" constant="8" id="BXK-dV-WcW"/>
+                                                <constraint firstItem="S8b-4O-o37" firstAttribute="leading" secondItem="nPI-CL-5fJ" secondAttribute="leading" id="Mop-6Y-GJO"/>
                                                 <constraint firstItem="RDB-tU-o38" firstAttribute="leading" secondItem="mKy-cF-yDN" secondAttribute="leadingMargin" id="Uqy-VG-IsH"/>
                                                 <constraint firstItem="nPI-CL-5fJ" firstAttribute="leading" secondItem="RDB-tU-o38" secondAttribute="trailing" constant="8" id="b9S-lz-zCL"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="RDB-tU-o38" secondAttribute="bottom" id="d2I-bW-fAg"/>
                                                 <constraint firstItem="jJ8-ei-i5o" firstAttribute="leading" secondItem="nPI-CL-5fJ" secondAttribute="leading" id="g2h-e4-3ir"/>
-                                                <constraint firstItem="jJ8-ei-i5o" firstAttribute="top" secondItem="nPI-CL-5fJ" secondAttribute="bottom" constant="8.5" id="l2l-cN-d2B"/>
                                                 <constraint firstAttribute="topMargin" secondItem="nPI-CL-5fJ" secondAttribute="top" id="vNa-nX-FRN"/>
+                                                <constraint firstItem="S8b-4O-o37" firstAttribute="top" secondItem="nPI-CL-5fJ" secondAttribute="bottom" constant="8.5" id="z98-C2-U50"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -143,6 +152,7 @@
                                             <outlet property="colleagueProfileImageView" destination="RDB-tU-o38" id="nvn-J7-MYl"/>
                                             <outlet property="displayName" destination="nPI-CL-5fJ" id="33L-v2-Mjg"/>
                                             <outlet property="location" destination="jJ8-ei-i5o" id="1qs-Mm-oIv"/>
+                                            <outlet property="teamLabel" destination="S8b-4O-o37" id="ft3-b7-Ol5"/>
                                             <segue destination="IAx-7V-2Bl" kind="show" identifier="showColleagueDetailSegue" id="R58-CW-MUy"/>
                                         </connections>
                                     </tableViewCell>

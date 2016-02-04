@@ -74,10 +74,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ColleagueTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ColleagueCell"];
     User *user = self.colleagues[indexPath.row];
-    NSString *displayName = user.displayName;
-    cell.displayName.text = displayName;
-    NSString *location = user.location.location;
-    cell.location.text = location;
+    cell.displayName.text = user.displayName;
+    cell.location.text = user.location.location;
+    cell.teamLabel.text = user.team.teamName;
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://collyg.be/profiles/small_%@", user.profilePicture]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [cell.colleagueProfileImageView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {

@@ -41,7 +41,7 @@
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
                                             // Do stuff after successful login.
-                                            successBlock(user);
+                                            successBlock((User*)user);
                                         } else {
                                             // The login failed. Check error to see why.
                                             failureBlock(error);
@@ -52,6 +52,19 @@
 
 - (void) fetchAllUsersWithSuccess:(usersCompletionBlock)successBlock failure:(errorBlock)failureBlock {
     PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    [query includeKey:@"team"];
+    [query includeKey:@"location"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            failureBlock(error);
+            return;
+        }
+        successBlock(objects);
+    }];
+}
+
+- (void) fetchAllLocationsWithSuccess:(locationsCompletionBlock)successBlock failure:(errorBlock)failureBlock {
+    PFQuery *query = [PFQuery queryWithClassName:@"Location"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             failureBlock(error);
